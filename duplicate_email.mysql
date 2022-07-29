@@ -1,0 +1,4 @@
+-- Write an SQL query to report all the duplicate emails.
+-- Return the result table in any order.
+
+select email from person group by email having count(email) > 1
