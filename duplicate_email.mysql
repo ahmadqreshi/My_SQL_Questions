@@ -2,3 +2,10 @@
 -- Return the result table in any order.
 
 select email from person group by email having count(email) > 1
+
+--method 2
+select email from 
+(
+  select email,count(email) from person group by email --creating another table for reference
+) as Statistis --mandatory to give schema 
+where count(email)>1
