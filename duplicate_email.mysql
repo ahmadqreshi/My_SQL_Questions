@@ -7,5 +7,5 @@ select email from person group by email having count(email) > 1
 select email from 
 (
   select email,count(email) from person group by email --creating another table for reference
-) as Statistis --mandatory to give schema 
+) as Statistis --mandatory to give alias 
 where count(email)>1
