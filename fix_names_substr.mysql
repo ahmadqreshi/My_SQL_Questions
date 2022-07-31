@@ -1,0 +1,27 @@
+/*
+Syntax
+SUBSTR(string, start, length)
+OR:
+SUBSTR(string FROM start FOR length)
+
+1-indexing in mysql
+
+Input: 
+Users table:
++---------+-------+
+| user_id | name  |
++---------+-------+
+| 1       | aLice |
+| 2       | bOB   |
++---------+-------+
+Output: 
++---------+-------+
+| user_id | name  |
++---------+-------+
+| 1       | Alice |
+| 2       | Bob   |
++---------+-------+
+*/
+
+select user_id, concat(upper(substr(name,1,1)),lower(substr(name,2))) as name
+from Users
